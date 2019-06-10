@@ -1,0 +1,55 @@
+body{
+  color:#fff;
+  background-color: gray; 
+}
+.index-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: orange;
+}
+.s_user_header{
+  display:flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: orange;
+}
+.form-header{
+  margin-bottom: 1rem;
+}
+.container{
+  padding: 1rem;
+  background-color: black;
+}
+.input{
+  margin-bottom: 1rem; 
+}
+.dropdown{
+  margin-top: .5rem;  
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+.user-container{
+  display: flex;
+  justify-content: space-between;
+}
+.name-tile{
+  display: flex;
+  justify-content: space-between;
+}
+.product-names{
+  display: flex;
+  justify-content: space-between;
+}
+.name-time{
+  display: flex;
+  flex-direction: column;
+}
+.amount-mode{
+  display: flex;
+  flex-direction: column;
+}
+.amount{
+display: flex;
+justify-content: flex-end;
+}

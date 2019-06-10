@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+<header class="s_user_header form-header">
+    <div>Inova</div>
+    <div><a class="button is-primary is-small" href="/">home</a></div>
+  </header>
+
+<form class="field" action="/users/" method="post">
+  <div class="control">
+      <input class="input is-primary" type="text" name="name" placeholder="name"  required>
+  </div>
+  <div class="control">
+      <input class="input is-primary" type="text" name="number" placeholder="number" minlength = 10 maxlength = 10 required>
+  </div>
+  <input class="button is-small is-success" type="submit" value="submit">
+</form>
