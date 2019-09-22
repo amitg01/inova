@@ -1,22 +1,27 @@
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var userSchema = new Schema({
-  name:{
+  name: {
     type: String,
     required: true
   },
-  number:{
+  number: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
-  total:{
-    type:Number,
-    default:0
+  total: {
+    type: Number,
+    default: 0
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false
   },
   products: [],
   date: Date
-})
+});
 
-var User = mongoose.model('User',userSchema);
+var User = mongoose.model("User", userSchema);
 module.exports = User;

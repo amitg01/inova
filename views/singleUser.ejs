@@ -1,78 +1,97 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
-<link rel="stylesheet" href="/stylesheets/style.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"
+/>
+<link rel="stylesheet" href="/stylesheets/style.css" />
 <script src="https://kit.fontawesome.com/4aca494ef1.js"></script>
 
 <header class="s_user_header">
-    <div>Inova</div>
-    <div><a class="button is-primary is-small" href="/">home</a></div>
-  </header>
-
+  <div>Inova</div>
+  <div><a class="button is-primary is-small" href="/">home</a></div>
+</header>
 
 <div class="container">
   <div class="name-tile">
-      <div>
-          <h1 class="title"><%=user.name%></h1>
-          <h2 class="subtitle"><%=user.number%></h2>
-          <h2 class="subtitle">Total: <i class="fas fa-rupee-sign symbol"></i> <%=user.total%></h2>
-      </div>
-       
-      <div>
-            <button class="button is-danger is-small" onclick="removeUser()">remove user</button>
-      </div>
+    <div>
+      <h1 class="title"><%=user.name%></h1>
+      <h2 class="subtitle"><%=user.number%></h2>
+      <h2 class="subtitle">
+        Total: <i class="fas fa-rupee-sign symbol"></i> <%=user.total%>
+      </h2>
+    </div>
+
+    <div>
+      <button class="button is-danger is-small" onclick="removeUser()">
+        remove user
+      </button>
+    </div>
   </div>
-  <hr>
-  
-    
-    <a href="/users/<%=user.id%>/remove"  id="remove" hidden></a>
-    
-    
-    
-    
-    
-    <p>payment</p>
-    <form class="field" action="/users/<%=user.id%>/payment" method="POST">
-      <select class="dropdown" name="mode">
-        <option value="cash">cash</option>
-        <option value="phonepe">phonepe</option>
-        <option value="adjustment">adjustment</option>
-      </select>
-      <div class="control">
-          <input class="input is-primary" type="number" name="amount" placeholder="amount" required>
+  <hr />
+
+  <a href="/users/<%=user.id%>/remove" id="remove" hidden></a>
+
+  <p>payment</p>
+  <form class="field" action="/users/<%=user.id%>/payment" method="POST">
+    <select class="dropdown" name="mode">
+      <option value="cash">cash</option>
+      <option value="phonepe">phonepe</option>
+      <option value="adjustment">adjustment</option>
+    </select>
+    <div class="control">
+      <input
+        class="input is-primary"
+        type="number"
+        name="amount"
+        placeholder="amount"
+        required
+      />
+    </div>
+
+    <input class="button is-small is-success" type="submit" value="done" />
+  </form>
+
+  <p>add products</p>
+  <form class="field" action="/users/<%=user.id%>/products" method="post">
+    <div class="control">
+      <input
+        class="input is-primary"
+        type="text"
+        name="product"
+        placeholder="product name"
+        required
+      />
+    </div>
+    <div class="control">
+      <input
+        class="input is-primary"
+        type="number"
+        name="amount"
+        placeholder="amount"
+        required
+      />
+    </div>
+
+    <input class="button is-small is-success" type="submit" value="done" />
+  </form>
+
+  <% user.products.reverse().forEach(product => { %>
+  <hr />
+  <div class="product-names">
+    <div class="name-time">
+      <span><%=product.product%></span>
+      <span><%=product.date.toString().slice(0,-14)%></span>
+    </div>
+    <div class="amount-mode">
+      <div class="amount">
+        <span><i class="fas fa-rupee-sign symbol"></i></span>
+        <span><%=product.amount%></span>
       </div>
-      
-      <input class="button is-small is-success" type="submit" value="done">
-    </form>
-    
-    <p>add products</p>
-    <form class="field" action="/users/<%=user.id%>/products" method="post">
-      <div class="control">
-          <input class="input is-primary" type="text" name="product" placeholder="product name" required>
+      <div>
+        <span><%=product.mode%></span>
       </div>
-      <div class="control">
-          <input class="input is-primary" type="number" name="amount" placeholder="amount" required>
-      </div>
-      
-      <input class="button is-small is-success" type="submit" value="done">
-    </form>
-    
-    <% user.products.reverse().forEach(product => { %>
-      <hr>
-      <div class="product-names">
-        <div class="name-time">
-            <span><%=product.product%></span>
-            <span><%=product.date.toString().slice(0,-14)%></span> 
-        </div>
-       <div class="amount-mode">
-         <div class="amount">
-          <span><i class="fas fa-rupee-sign symbol"></i></span>  
-          <span><%=product.amount%></span>
-         </div>
-         <div>
-            <span><%=product.mode%></span> 
-         </div>
-        </div>
-      </div>
-    <% }) %>
+    </div>
+  </div>
+  <% }) %>
 </div>
 
 <script src="/javascripts/script.js"></script>

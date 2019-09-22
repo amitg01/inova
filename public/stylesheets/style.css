@@ -1,60 +1,68 @@
-body{
-  color:#fff;
-  background-color: gray; 
+body {
+  color: #000;
+  background-color: #fff;
 }
-.index-header{
+.index-header {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background-color: orange;
+  background-color: #3a506b;
+  color: white;
 }
-.s_user_header{
-  display:flex;
+.s_user_header {
+  display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background-color: orange;
+  background-color: #3a506b;
 }
-.form-header{
+.form-header {
   margin-bottom: 1rem;
 }
-.container{
-  padding: 0 1rem;
+.container {
+  padding: 0 0rem;
 }
 
-.input{
-  margin-bottom: 1rem; 
+.input {
+  margin-bottom: 1rem;
 }
-.dropdown{
-  margin-top: .5rem;  
+.dropdown {
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 5px;
 }
-.user-container{
+.user-container {
   display: flex;
   justify-content: space-between;
-  background-color: black;
-  margin: .5rem 0;
-  padding: .5rem 1rem;
+  background-color: #75ecf2;
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
 }
-.name-tile{
+.name-tile {
   display: flex;
   justify-content: space-between;
   padding-top: 1rem;
 }
-.product-names{
+.product-names {
   display: flex;
   justify-content: space-between;
 }
-.name-time{
+.name-time {
   display: flex;
   flex-direction: column;
 }
-.amount-mode{
+.amount-mode {
   display: flex;
   flex-direction: column;
 }
-.amount{
+.amount {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+a {
+  color: black;
+}
+
+.container {
+  width: 100%;
 }
