@@ -1,0 +1,8 @@
+# INOVA
+
+A full stack app made using MERN stack. It lets the admin to maintan transaction records of users. It performs CRUD operations and makes it easier for the admin to keep track of every users transaction.
+
+#TO INSTALL
+
+-item
+
